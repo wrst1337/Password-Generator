@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="password-generator">
+        <h1>Password Generator</h1>
+        <input type="text" id="password" readonly onmousedown="return false;">
+        <button onclick="generatePassword()" id="generateButton">Generate Password</button>
+        <button onclick="copyToClipboard()">Copy Password</button>
+        <p id="password-info">Click "Generate Password" to get a secure password.</p>
+        <footer>
+            Created with ❤️ by <a href="https://github.com/wrst1337" target="_blank">worst1337</a> | 
+            <a href="https://github.com/yourusername/password-generator" target="_blank">GitHub Repo</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

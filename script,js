@@ -1,0 +1,27 @@
+function generatePassword() {
+    const length = 40;
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+    }
+    document.getElementById("password").value = password;
+}
+
+function copyToClipboard() {
+    const passwordField = document.getElementById("password");
+    const originalPassword = passwordField.value;
+
+    if (passwordField.value !== "" && passwordField.value !== undefined) {
+        passwordField.select();
+        document.execCommand("copy");
+        passwordField.value = "Copied Password!";
+        document.getElementById("generateButton").disabled = true;
+
+        setTimeout(function () {
+            document.getElementById("generateButton").disabled = false;
+            passwordField.value = originalPassword;
+        }, 1000);
+    }
+}
